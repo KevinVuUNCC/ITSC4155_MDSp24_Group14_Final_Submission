@@ -8,10 +8,18 @@ Final Submission Github: https://github.com/KevinVuUNCC/ITSC4155_MDSp24_Group14_
 
 History of Creation Github: https://github.com/KevinVuUNCC/ITSC4155_MDSp24_Group14 
 
-Files:
+Files and Fiel Description:
 * Clicking Cookies - Main Codebase Submission
 * FinalPrototypeCodeBase - Secondary Codebase Submission incase Firebase Keys Expire
 * History of Document - All version of submissions from Design Documents, Diagrams, UserStories, Backlog, and Prototypes
+        *Design Document Versions - All Past Versions of the Design DOcuments
+        *History of Prototypes - All Past Version of the Working Prototypes
+        -Activity Diagram 1 (Activity Diagram Showing User Interaction)
+        -Activity Diagram 2 (Activity Diagram Showing Moderation in Detail)
+        -Context Diagram
+        -Product Backlog
+        -UserStories
+        -UseCaseDiagram
 * Clicking Cookies Final Design Document
 
 
