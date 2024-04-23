@@ -42,17 +42,12 @@ import edu.uncc.myapplication.models.ReviewRecyclerViewAdapter;
 public class EditRecipeFragment extends Fragment {
 
     private FirebaseAuth mAuth;
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private static final String ARG_RECIPE = "RECIPE";
-    private String mParam1;
-    private String mParam2;
     final String TAG = "james";
     private Uri imageURI;
-
     private Recipe recipe;
-
     StorageReference storageReference = FirebaseStorage.getInstance().getReference();
     public EditRecipeFragment() {
         // Required empty public constructor
@@ -61,8 +56,6 @@ public class EditRecipeFragment extends Fragment {
     public static EditRecipeFragment newInstance(Recipe data, String param1, String param2) {
         EditRecipeFragment fragment = new EditRecipeFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
 
         args.putSerializable(ARG_RECIPE, data);
         fragment.setArguments(args);
@@ -74,8 +67,6 @@ public class EditRecipeFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             recipe = (Recipe) getArguments().getSerializable(ARG_RECIPE);
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
@@ -129,7 +120,7 @@ public class EditRecipeFragment extends Fragment {
         binding.buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editRecipeListener.backToRecipe();
+                editRecipeListener.backToDetails();
             }
         });
 
@@ -174,7 +165,7 @@ public class EditRecipeFragment extends Fragment {
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
-                                editRecipeListener.backToRecipe();
+                                editRecipeListener.backEditToRecipe();
                                 Toast.makeText(getActivity(), "Post Deleted!", Toast.LENGTH_SHORT).show();
                             }
                         });
@@ -194,8 +185,6 @@ public class EditRecipeFragment extends Fragment {
                     Toast.makeText(getActivity(),"No Description Was Inputted", Toast.LENGTH_SHORT).show();
                 }
                 else{
-
-                    FirebaseFirestore db = FirebaseFirestore.getInstance();
                     mAuth = FirebaseAuth.getInstance();
 
                     String displayName = mAuth.getCurrentUser().getDisplayName();
@@ -239,7 +228,7 @@ public class EditRecipeFragment extends Fragment {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             // Image uploaded successfully
-                            editRecipeListener.SubmitRecipe();
+                            editRecipeListener.SubmitEditRecipe(recipe);
                             Toast.makeText(getActivity(), "Post Created!", Toast.LENGTH_SHORT).show();
                         }
                     })
@@ -247,12 +236,14 @@ public class EditRecipeFragment extends Fragment {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             // Handle unsuccessful uploads
-                            editRecipeListener.SubmitRecipe();
+                            editRecipeListener.SubmitEditRecipe(recipe);
                             Toast.makeText(getActivity(), "Post Create but Image failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         } else {
-            editRecipeListener.gotoRecipeDetails(recipe);
+            editRecipeListener.backEditToRecipe();
+            Toast.makeText(getActivity(), "Post Edited!", Toast.LENGTH_SHORT).show();
+
         }
     }
 
@@ -288,12 +279,12 @@ public class EditRecipeFragment extends Fragment {
         }
     }
 
-
     //TODO: The interface for the TasksFragment
     public interface EditRecipeListener {
-        void backToRecipe();
-        void SubmitRecipe();
-        void gotoRecipeDetails(Recipe recipe);
+        void backToDetails();
+        void backEditToRecipe();
+        void SubmitEditRecipe(Recipe recipe);
+        void goBacktoRecipeDetails(Recipe recipe);
     }
 
 }

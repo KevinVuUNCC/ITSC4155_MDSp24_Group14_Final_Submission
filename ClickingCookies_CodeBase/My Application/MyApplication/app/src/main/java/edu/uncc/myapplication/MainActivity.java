@@ -93,7 +93,7 @@ public class MainActivity extends AppCompatActivity implements AccountDetailsFra
     @Override
     public void gotoRecipeDetails(Recipe recipe) {
         getSupportFragmentManager().beginTransaction()
-                .replace(R.id.rootView, RecipeDetailsFragment.newInstance(recipe))
+                .replace(R.id.rootView, RecipeDetailsFragment.newInstance(recipe), "RecipeDetailFrag")
                 .addToBackStack(null)
                 .commit();
     }
@@ -107,9 +107,45 @@ public class MainActivity extends AppCompatActivity implements AccountDetailsFra
     }
 
     @Override
+    public void goBacktoRecipeDetails(Recipe recipe) {
+        RecipeDetailsFragment recipeDetailsFragment = (RecipeDetailsFragment) getSupportFragmentManager().findFragmentByTag("RecipeDetailFrag");
+        if (recipeDetailsFragment != null){
+            recipeDetailsFragment.change_Recipe(recipe);
+            getSupportFragmentManager().popBackStack();
+        }
+    }
+
+    @Override
     public void backToRecipe() {
         RecipeFragment recipeFragment = (RecipeFragment) getSupportFragmentManager().findFragmentByTag("RecipeFrag");
         if (recipeFragment != null){
+            getSupportFragmentManager().popBackStack();
+        }
+    }
+
+    @Override
+    public void backToDetails() {
+        RecipeDetailsFragment recipeDetailsFragment = (RecipeDetailsFragment) getSupportFragmentManager().findFragmentByTag("RecipeDetailFrag");
+        if (recipeDetailsFragment != null){
+            getSupportFragmentManager().popBackStack();
+        }
+    }
+
+    @Override
+    public void backEditToRecipe() {
+        RecipeFragment recipeFragment = (RecipeFragment) getSupportFragmentManager().findFragmentByTag("RecipeFrag");
+        if (recipeFragment != null){
+            getSupportFragmentManager().popBackStack();
+            getSupportFragmentManager().popBackStack();
+        }
+
+    }
+
+    @Override
+    public void SubmitEditRecipe(Recipe recipe) {
+        RecipeDetailsFragment recipeDetailsFragment = (RecipeDetailsFragment) getSupportFragmentManager().findFragmentByTag("RecipeDetailFrag");
+        if (recipeDetailsFragment != null){
+            recipeDetailsFragment.change_Recipe(recipe);
             getSupportFragmentManager().popBackStack();
         }
     }

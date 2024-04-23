@@ -56,6 +56,14 @@ public class RecipeDetailsFragment extends Fragment implements ReviewRecyclerVie
 
     private Recipe recipe;
 
+    public void change_Recipe(Recipe data){
+        recipe = data;
+        binding.textViewDetailTitle.setText(recipe.getName());
+        binding.textViewDetailTime.setText(recipe.getTime());
+        binding.textViewDetailUser.setText("Recipe Created By: " + recipe.getUser());
+        binding.textViewDetailDescription.setText(recipe.getDescription());
+    }
+
     public RecipeDetailsFragment() {
         // Required empty public constructor
     }
