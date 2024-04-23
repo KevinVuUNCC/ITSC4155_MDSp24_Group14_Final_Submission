@@ -5,8 +5,10 @@ Kevin Vu (kvu10@uncc.edu)
 Forrest Wilkerson (fwilkers@uncc.edu)
 
 Final Submission Github: https://github.com/KevinVuUNCC/ITSC4155_MDSp24_Group14_Final_Submission
+(All Final Submission Deliverables)
 
-History of Creation Github: https://github.com/KevinVuUNCC/ITSC4155_MDSp24_Group14 
+History of Creation Github: https://github.com/KevinVuUNCC/ITSC4155_MDSp24_Group14
+(All Files Created During the Project such as Diagrams, Prototypes, Documents, and Powerpoints relating to the Project and Checkpoints)
 
 Files and Fiel Description:
 * Clicking Cookies - Main Codebase Submission
