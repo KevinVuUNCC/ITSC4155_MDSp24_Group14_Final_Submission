@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "549125691971",
+    "project_id": "clickingcookies2",
+    "storage_bucket": "clickingcookies2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549125691971:android:6ac6f2d04b7bc58cc6d2f6",
+        "android_client_info": {
+          "package_name": "edu.uncc.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOtDPr0bSUzCokCBzuTpUTo8zFvr5S2ks"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
