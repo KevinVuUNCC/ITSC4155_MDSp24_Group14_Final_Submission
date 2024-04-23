@@ -11,8 +11,7 @@ History of Creation Github: https://github.com/KevinVuUNCC/ITSC4155_MDSp24_Group
 (All Files Created During the Project such as Diagrams, Prototypes, Documents, and Powerpoints relating to the Project and Checkpoints)
 
 Files and File Description:
-* Clicking Cookies - Main Codebase Submission
-* FinalPrototypeCodeBase - Secondary Codebase Submission incase Firebase Keys Expire
+* ClickingCookiesCodeBase - Secondary Codebase Submission incase Firebase Keys Expire
 * History of Document - All version of submissions from Design Documents, Diagrams, UserStories, Backlog, and Prototypes
         *Design Document Versions - All Past Versions of the Design DOcuments
         *History of Prototypes - All Past Version of the Working Prototypes
