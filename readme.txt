@@ -22,6 +22,8 @@ Files and File Description:
         -UserStories
         -UseCaseDiagram
 * Clicking Cookies Final Design Document
+* Group14_ClickingCookies_FinalVideo: A file with a GoogleDrive Link Due to the Video Files being Too Big
+* Running Video: A file with a GoogleDrive Link Due to the Video Files being Too Big
 
 
 
